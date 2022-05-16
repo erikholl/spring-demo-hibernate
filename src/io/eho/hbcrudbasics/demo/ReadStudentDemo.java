@@ -1,11 +1,11 @@
-package io.eho.hibernate.demo;
+package io.eho.hbcrudbasics.demo;
 
-import io.eho.hibernate.demo.entity.Student;
+import io.eho.hbcrudbasics.demo.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateStudentDemo {
+public class ReadStudentDemo {
 
     public static void main(String[] args) {
 
@@ -19,21 +19,37 @@ public class CreateStudentDemo {
         Session session = factory.getCurrentSession();
 
         try {
-            // use session object to save Java object
-
             // create Student object
             System.out.println("creating new student object");
-            Student tempStudent = new Student("Paul", "Wall", "paul@whatever" +
-                    ".com");
+            Student tempStudent = new Student("Daffy", "Duck", "daffy" +
+                    "@whatever.com");
 
             // start a transaction
             session.beginTransaction();
 
             // save the student object
             System.out.println("saving the  student");
+            System.out.println(tempStudent);
             session.save(tempStudent);
 
             // commit transaction
+            session.getTransaction().commit();
+
+            // NEW CODE FOR READ
+            // find out the student's id: primary key
+            System.out.println("saved student. Generated id: " + tempStudent.getId());
+
+            // get a new session and start transaction
+            session = factory.getCurrentSession();
+            session.beginTransaction();
+
+            // retrieve student based on the id: primary key
+            System.out.println("\nGetting student with id: " + tempStudent.getId());
+            Student myStudent = session.get(Student.class, tempStudent.getId());
+
+            System.out.println("Get complete: " + myStudent);
+
+            // commit the transaction
             session.getTransaction().commit();
 
             System.out.println("done");

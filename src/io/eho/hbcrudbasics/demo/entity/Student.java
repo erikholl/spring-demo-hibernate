@@ -1,32 +1,33 @@
-package io.eho.hibernate.exercise.entity;
+package io.eho.hbcrudbasics.demo.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="employee")
-public class Employee {
+@Table(name="student")
+public class Student {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
-    int id;
+    private int id;
 
     @Column(name="first_name")
-    String firstName;
+    private String firstName;
 
     @Column(name="last_name")
-    String lastName;
+    private String lastName;
 
-    @Column(name="company")
-    String company;
+    @Column(name="email")
+    private String email;
 
-    public Employee() {
+    public Student(){
+
     }
 
-    public Employee(String firstName, String lastName, String company) {
+    public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.company = company;
+        this.email = email;
     }
 
     public int getId() {
@@ -53,21 +54,21 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getCompany() {
-        return company;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Student{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", company='" + company + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

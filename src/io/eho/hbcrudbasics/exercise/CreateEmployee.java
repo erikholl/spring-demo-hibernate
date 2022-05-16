@@ -1,6 +1,6 @@
-package io.eho.hibernate.exercise;
+package io.eho.hbcrudbasics.exercise;
 
-import io.eho.hibernate.exercise.entity.Employee;
+import io.eho.hbcrudbasics.exercise.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

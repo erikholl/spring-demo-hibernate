@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `employee`;
-USE `employee`;
+CREATE DATABASE  IF NOT EXISTS `employee_tracker`;
+USE `employee_tracker`;
 
 --
 -- Table structure for table `employee`
