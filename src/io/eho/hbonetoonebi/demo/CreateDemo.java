@@ -1,7 +1,7 @@
-package io.eho.hbonetooneuni.demo;
+package io.eho.hbonetoonebi.demo;
 
-import io.eho.hbonetooneuni.demo.entity.Instructor;
-import io.eho.hbonetooneuni.demo.entity.InstructorDetail;
+import io.eho.hbonetoonebi.demo.entity.Instructor;
+import io.eho.hbonetoonebi.demo.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,19 +21,19 @@ public class CreateDemo {
         Session session = factory.getCurrentSession();
 
         // create instructor and instructorDetail objects
-//        Instructor instructor = new Instructor("Chad", "Darby", "darby" +
-//                "@luv2code.com");
-//
-//        InstructorDetail instructorDetail = new InstructorDetail(
-//                "http://www.luv2code.come/youtube",
-//                "Luv 2 code!!");
-
-        Instructor instructor = new Instructor("Roman", "Riquelme",
-                                               "roman@argentina.ar");
+        Instructor instructor = new Instructor("Chad", "Darby", "darby" +
+                "@luv2code.com");
 
         InstructorDetail instructorDetail = new InstructorDetail(
-                "http://www.riquelme.youtube",
-                "golf");
+                "http://www.luv2code.come/youtube",
+                "Luv 2 code!!");
+//
+//        Instructor instructor = new Instructor("Roman", "Riquelme",
+//                                               "roman@argentina.ar");
+//
+//        InstructorDetail instructorDetail = new InstructorDetail(
+//                "http://www.riquelme.youtube",
+//                "golf");
 
 
         // associate the objects
