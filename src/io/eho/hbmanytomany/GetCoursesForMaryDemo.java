@@ -23,7 +23,7 @@ public class GetCoursesForMaryDemo {
         Session session = factory.getCurrentSession();
 
         try {
-            // start transaction + test comment
+            // start transaction
             session.beginTransaction();
 
             // get the student Mary from DB
